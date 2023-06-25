@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Requirements
+
+API rest
+
+    https://github.com/kswelder/taks-list
+
+Download my API rest from use this project
+
+Your need docker and postgres in your machine
+
 ## Available Scripts
 
 In the project directory, you can run:
