@@ -1,25 +1,22 @@
-import { React, useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../styles/App.css';
 
+import Categories from './Categories';
+import Home from './Home';
+import Task from './Task';
+import Tasks from './Tasks';
+
 function App() {
-  const [lista, setLista] = useState([])
-  
-  async function getLista() {
-    const response = await fetch("http://localhost:8081/list").then(data => {return data.json()}).catch(error => {return "<p>Erro</p>"})
-    return response
-  }
-  useEffect(() => {
-    let resposta = getLista()
-
-    if (resposta !== null) {
-      setLista(resposta)
-    }
-  })
-
   return (
-    <div className="App">
-      <p>App<br/>{lista}</p>
-    </div>
+    <BrowserRouter className="App">
+      <Routes>
+        <Route exact path="/" Component={Home}/>
+        <Route path="/task" Component={Task}/>
+        <Route path="/tasks" Component={Tasks}/>
+        <Route path="/categories" Component={Categories}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
